@@ -4,13 +4,13 @@ Jekyll + Gulp + Sass + Yarn + BrowserSync + ...
 
 ## GH-Pages
 
-* This template is served to github pages from the docs/ folder
+* This template is served to github pages from the docs/ folder at:
 * https://wdzajicek.github.io/portfolio/
 
 ## Requirements
+* Jekyll - `$ gem install jekyll bundler`
 * Nodejs - Use installer
 * Gulp - `$ npm install --global gulp-cli`
-* Jekyll - `$ gem install jekyll bundler`
 * Bundler - `$ gem install bundler`
 
 ##  Installation
