@@ -7,6 +7,11 @@ Jekyll + Gulp + Sass + Yarn + BrowserSync + ...
 * This template is served to github pages from the docs/ folder at:
 * https://wdzajicek.github.io/portfolio/
 
+## Windows 10 Development Environment with Dotfiles!
+
+* Check out how I set up my Windows 10 development environment using Dotfiles
+* https://wdzajicek.github.io/portfolio/windows-dev.html
+
 ## Requirements
 * Jekyll - `$ gem install jekyll bundler`
 * Nodejs - Use installer
