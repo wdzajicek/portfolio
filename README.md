@@ -14,7 +14,7 @@ Jekyll + Gulp + Sass + Yarn + BrowserSync + ...
 * Bundler - `$ gem install bundler`
 
 ##  Installation
-	$ git clone https://github.com/KankakeeCommunityCollege/gulp-yarn-template.git
+	$ git clone https://github.com/wdzajicek/portfolio
 	$ cd gulp-yarn-template
 	$ npm install
 	$ bundle install
