@@ -1,0 +1,226 @@
+<section>
+  <div class="row row-pad">
+    <div class="col-lg-12">
+      <h3>Setting up bash on Ubuntu on Windows 10 with RVM, Node.js, Gulp, and Dotfiles!</h3>
+      <br>
+      <p>Prerequisites: Native Windows 10 PC (I am using Windows 10 Home with the Fall Creators Update)</p>
+      <br>
+      <hr>
+      <h3>Assumptions</h3>
+      <hr>
+      <ul class="disc-only">
+        <li>Command prompts (cmd.exe, git-cmd.exe) should always be run as Administrator.</li>
+        <li>I use Git CMD (git-cmd.exe) for my Windows command line.</li>
+        <li>For this guide, a code block starting with "$" designates a bash shell instance:</li>
+          <ul class="disc-only">
+            <li><p class="code">bash <span class="comment">// use bash to enter a bash shell instance</span><br>
+        $ gem update &#60;gemname&#62; <span class="comment">// &#60;values&#62; are meant to be replaced with a real value</span></p></li>
+          </ul>
+        </ul>
+      <hr>
+      <h3>Install Bash on Ubuntu on Windows 10</h3>
+      <hr>
+        <p>You need to be able to use $ bash from a cmd prompt.</p>
+        <p>To do this, use the following steps:</p>
+        <ol>
+        <strong><li>Enable the Linux Subsystem for Windows</li></strong><br>
+        <ol>
+          <li>Open PowerShell as Administrator</li>
+          <li>Run the following command to enable the Linux Subsystem:</li>
+            <ul class="disc-only"><li><p class="code">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</p></li></ul>
+          <li>Follow any prompts and restart when prompted.</li>
+        </ol><br>
+        <strong><li>Download and install Ubuntu:</li></strong><br>
+          <ol>
+            <li>Make sure new programs are set to install on your C:/ drive</li>
+            <ul class="disc-only">
+              <li><strong>Settings &#62; System &#62; Storage</strong><br>
+                under <strong><em>"Manage storage settings"</em></strong>, set <strong><em>"New apps will save to:"</em></strong> to <strong><em>"This PC (C:)"</em></strong></li><br>
+            </ul>
+            <li>Go to the Microsoft Store app and search for, and install, Ubuntu.</li>
+            <li>Run Ubuntu initial setup:</li>
+            <ol>
+              <li>Click the new Ubuntu start-menu item to launch Ubuntu for the first time.</li>
+              <li>Follow the prompts for the first installation.</li>
+              <li>Create, and REMEMBER, a new UNIX username and Password</li>
+                <ul class="disc-only">
+                  <li><strong><em>You will use this password a lot, so choose wisely. It's used for things like running commands as root user with sudo.</em></strong></li><br>
+                </ul>
+            </ol>
+            <li>Turn Windows Developer Mode on:</li>
+            <ol>
+              <li>Go to <strong>Settings &#62; Update & Security &#62; For developers</strong> and select the <strong><em>"Developer mode"</em></strong> radio circle.</li>
+              <li>Apply the default "File Explorer" and "PowerShell" settings.</li>
+            </ol>
+          </ol>
+      </ol><br>
+      <p><strong>You should now be able to type the <span class="mini-code">$ bash</span> command into any command prompt (e.g. cmd.exe, git cmd) to create a bash shell instance in Windows.</strong></p><br>
+      <hr>
+      <div class="row danger-row">
+        <h3 class="important text-center">**KEEP OUT OF ROOM 237**</h3><br>
+        <p class="warn"><strong>NEVER ATTEMPT TO MODIFY OR ACCESS ANY PART OF THE LINUX SUSYSTEM using windows or any program (e.g. Windows Explorer, Atom).</strong></p>
+        <p class="warn"><strong>Windows programs will corrupt the Linux system's code by inserting its garbage, and BAD THINGS WILL HAPPEN!</strong></p>
+        <p class="warn"><strong>You should ONLY MODIFY LINUX SUBSYSTEM USING A BASH SHELL INSTANCE if you know what you are doing.</strong></p>
+      </div>
+      <hr><br>
+      <p>Prior to the next steps, I had installed Jekyll via the method on jekyllrb.com Docs Installing on Windows page. This ruby version and the installed ruby gems must be removed FIRST.</p>
+      <ul class="disc-only">
+        <li>To remove Ruby installed via jekyllrb.com/docs/windows/</li>
+        <ul class="disc-only">
+          <li><p class="code">$ bash <br>
+          $ sudo apt-get remove ruby2.3 ruby2.3-dev build-essential dh-autoreconf <br>
+          $ sudo apt autoremove <span class="comment">// and a little bit of cleanup</span></p></li>
+        </ul>
+      </ul><br>
+      <ul class="disc-only">
+        <li>I also had conflicting RVM installed on top of that. You shouldn't need this step unless you've tried to install RVM already. If you need to start fresh run:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ rvm cleanup all <br>
+            $ rvm implode</p></li>
+        </ul>
+      </ul><br>
+      <hr>
+      <h3>Install RVM</h3><br>
+      <hr>
+      <ol>
+        <li>Request RVM keys from public key server:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</p></li>
+        </ul><br>
+        <li>Install gnupg2:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ sudo apt-get install gnupg2</p></li><br>
+        </ul>
+        <li>Download and run RVM installation shell script:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ \curl -sSL https://get.rvm.io -o rvm.sh <span class="comment">// I left the shell scripts settings as-is</span><br>
+          $ less rvm.sh <span class="comment">// edit isntallation shell script with this</span><br>
+          $ cat rvm.sh | bash -s stable <span class="comment">// run the RVM installation shell script</span><br>
+          $ source ~/.rvm/scripts/rvm</p></li>
+        </ul><br>
+      </ol>
+      <hr>
+      <h3>Set RVM Path in .bash_profile</h3>
+      <hr>
+      <ul class="disc-only">
+        <li>ADD CONTENT</li>
+      </ul>
+      <hr>
+      <h3>Install Latest Ruby Version and Update</h3>
+      <hr>
+      <ul class="disc-only">
+        <li>Install the latest stable version</li>
+        <ul class="disc-only">
+          <li><p class="code">$ rvm install ruby --default</p></li>
+        </ul><br>
+        <li>Check ruby installation:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ ruby -v <br>
+          ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] <span class="comment">// my ruby version returns 2.4.1</span></p></li>
+        </ul><br>
+        <li>Update gems with:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ gem update</p></li>
+        </ul><br>
+        <li>I had to install a libgemplugin-ruby dependency with:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ sudo apt-get install libgemplugin-ruby</p></li>
+        </ul>
+      </ul><br>
+      <hr>
+      <h3>Install Jekyll</h3>
+      <hr>
+      <ul class="disc-only">
+        <li>Install the jekyll gem with:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ gem install jekyll bundler <br>
+          $ jekyll -v <span class="comment">// check the installation</span></p></li>
+        </ul>
+      </ul><br>
+      <hr>
+      <h3>Install specific version of Node.js</h3>
+      <hr><br>
+      <p>Using the Windows Node.js installer will put node.js and npm in the windows system. We want to use node.js and npm while in the bash linux subsystem.</p>
+      <ul class="disc-only">
+        <li>Prepare for installation:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ sudo su <br>
+          $ apt-get -y update <br>
+          $ apt-get install git</p></li>
+        </ul><br>
+        <li>Use curl to install Node.js. Replace the only number in the command below, with the desired version number. Refer to https://nodejs.org/en/:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+        apt-get install -y nodejs</p></li>
+        <li>Exit su with [Ctrl] + D</li>
+      </ul>
+      </ul><br>
+      <hr>
+      <h3>Install Bundler</h3>
+      <hr>
+      <ul class="disc-only">
+        <li><p class="code">$ gem install bundler</p></li>
+      </ul><br>
+      <hr>
+      <h3>Install Gulp</h3>
+      <hr>
+      <ul class="disc-only">
+        <li><p class="code">$ npm install --global gulp-cli <span class="comment">// install gulp globaly</span></p></li>
+      </ul><br>
+      <hr>
+      <h3>Dotfiles on bash on Ubuntu on Windows 10</h3>
+      <hr><br>
+      <ol>
+        <li>Change to Home Directory:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ cd ~</p></li>
+        </ul><br>
+        <li>Download my dotfiles</li>
+        <ul class="disc-only">
+          <li><p class="code">$ git clone https://github.com/wdzajicek/dotfiles.git <br>
+          $ cd dotfiles <span class="comment">// cd to downloaded repo</span></p></li>
+        </ul><br>
+        <li>Copy the code linking bash_profile to aliases, functions, etc:</li>
+        <ul class="disc-only">
+          <li><p class="code">$ vim .bash_profile <br>
+        </ul><br>
+        <li>Copy the code from dotfiles/.bash_profile</li>
+        <ul class="disc-only">
+          <li><p class="code">for file in ~/.{path,bash_prompt,aliases,functions}; do <br>
+        	[ -r "$file" ] && [ -f "$file" ] && source "$file"; <br>
+        done; <br>
+        unset file;</p></li>
+      </ul><br>
+        <li>Paste code into current .bash_profile</li>
+        <ul class="disc-only">
+          <li><p class="code">$ cd .. <br>
+          $ vim .bash_profile</p></li>
+          <li>Enter instert mode with "I"</li>
+          <li>Paste code before path to RVM</li>
+          <li>Example .bash_profile:</li>
+          <ul class="disc-only">
+            <li><p class="code">[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile <br>
+            <br>
+            export PATH="/usr/local/opt/gettext/bin:$PATH" <br>
+            <br>
+            for file in ~/.{path,bash_prompt,aliases,functions}; do <br>
+            	[ -r "$file" ] && [ -f "$file" ] && source "$file"; <br>
+            done; <br>
+            unset file; <br>
+            <br>
+            [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*</p></li>
+          </ul>
+        </ul>
+        <li>Copy .aliases, .functions, and .bash_promt to Home</li>
+        <ul class="disc-only">
+          <li><p class="code">$ cd ~ <br>
+          cd dotfiles <br>
+          $ cp .aliases ../.aliases <br>
+          $ cp .functions ../.functions <br>
+          $ cp .bash_prompt ../bash_prompt <br>
+          </p></li>
+        </ul>
+      </ol>
+    </div>
+  </div>
+</section>

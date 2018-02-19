@@ -1,0 +1,10 @@
+.DS_Store
+_site
+.sass-cache
+.jekyll-metadata
+bower_components/*
+!bower_components/.gitkeep
+node_modules/
+Gemfile.lock
+assets/adobe/
+assets/adobe/*
