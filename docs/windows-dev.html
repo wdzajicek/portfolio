@@ -28,7 +28,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="dropdown nav-item nav-padding"><a href="#services" class="dropdown-toggle nav-link pad-left js-scroll-trigger" data-toggle="dropdown" role="button" aria-expanded="false">Services<span class="caret"></span></a>
+          <li class="dropdown nav-item nav-padding"><a href="#" class="dropdown-toggle nav-link pad-left js-scroll-trigger" data-toggle="dropdown" role="button" aria-expanded="false">Services<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a class="drop-item" href="#">2d Design</a></li>
               <li><a class="drop-item" href="#">3d Design</a></li>
@@ -69,11 +69,12 @@
     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
   </div>
 </header>
+<!-- main content container -->
 <div class="container-fluid">
 
   <br>
 <hr>
-<h2 class="text-center">Windows 10 Dev Envrionment</h2>
+<h2 class="win-heading text-center">Windows 10 Dev Envrionment</h2>
 <hr>
 
   <section>
@@ -92,8 +93,8 @@
         <li>I use Git CMD (git-cmd.exe) for my Windows command line.</li>
         <li>For this guide, a code block starting with "$" designates a bash shell instance:</li>
           <ul class="disc-only">
-            <li><p class="code">bash <span class="comment">// use bash to enter a bash shell instance</span><br>
-        $ gem update &#60;gemname&#62; <span class="comment">// &#60;values&#62; are meant to be replaced with a real value</span></p></li>
+            <li><div class="code-box"><p class="code">bash </p><span class="comment">// use bash to enter a bash shell instance</span><br>
+        <p class="code">$ gem update &#60;gemname&#62; </p><span class="comment">// &#60;values&#62; are meant to be replaced with a real value</span></div></li>
           </ul>
         </ul>
       <hr>
@@ -169,7 +170,7 @@
       <ol>
         <li>Request RVM keys from public key server:</li>
         <ul class="disc-only">
-          <li><p class="code">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</p></li>
+          <li><p class="code code-scroll">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</p></li>
         </ul><br>
         <li>Install gnupg2:</li>
         <ul class="disc-only">
@@ -314,9 +315,12 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- jquery easing -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
       <!-- custom compiled and minified javascript -->
       <script src="assets/js/all.min.js"></script>
-    </div> <!-- end enclosing div.container -->
+    </div> <!-- end main enclosing div.container -->
   </body>
 </html>
 
