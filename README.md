@@ -9,7 +9,8 @@ Jekyll + Gulp + Sass + Yarn + BrowserSync + ...
 
 ## Windows 10 Development Environment with Dotfiles!
 
-* Check out how I set up my Windows 10 development environment using Dotfiles
+I use a MacBook Pro at work and Windows 10 at home and have found some ways to make my cross-platform experience more unified. I am now using an alternate Windows-jekyll setup than that described on jekyllrb.com. This alternate jekyll installation uses RVM and is closer to my mac dev environment. I have also hacked my dotfiles from my mac at work into my Ubuntu .bash_profile on Windows.
+* Check out how I set up my Windows 10 development environment using Dotfiles:
 * https://wdzajicek.github.io/portfolio/windows-dev.html
 
 ## Requirements
