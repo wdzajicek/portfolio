@@ -1,4 +1,4 @@
-.code {
+.code-box {
   background-color: #282C34;
   color: #00ff00;
   border-color: #000000;
@@ -8,13 +8,25 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 15px;
-  margin-right: 200px !important;
+  margin-right: 20px;
+  height: auto;
+  display: inline-flex;
+}
+
+@media screen and (min-width: 768px) {
+  .code-box {
+    margin-right: 200px !important;
+  }
+}
+
+.code  {
+  align-items: flex-start;
 }
 
 span.comment  {
   color: #e9e9e9;
-  float: right;
   padding-right: 80px;
+  align-self: flex-end;
 }
 
 span.mini-code {
