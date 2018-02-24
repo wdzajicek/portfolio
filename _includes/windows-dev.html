@@ -4,8 +4,25 @@
     <div class="col-lg-8">
       <h3>Setting up bash on Ubuntu on Windows 10 with RVM, Node.js, Gulp, and Dotfiles!</h3>
       <br>
-      <p>Prerequisites: Native Windows 10 PC (I am using Windows 10 Home with the Fall Creators Update)</p>
+      <p id="contents">Prerequisites: Native Windows 10 PC (I am using Windows 10 Home with the Fall Creators Update)</p>
       <br>
+      <hr>
+      <h3>Contents:</h3>
+      <hr>
+      <ol>
+        <li><a href="#ass">Assumptions</a></li>
+        <li><a href="#auto">Helpful Automations</a></li>
+        <li><a href="#bash">Install Bash on Ubuntu on Windows 10</a></li>
+        <li><a href="#update-ubuntu">Update Ubuntu</a></li>
+        <li><a href="#cleanup">Cleanup Prior Rubies</a></li>
+        <li><a href="#rvm">Install RVM</a></li>
+        <li><a href="#ruby">Install Latest Ruby Version and Update</a></li>
+        <li><a href="#jekyll">Install Jekyll</a></li>
+        <li><a href="#node">Install a Specific Version of Node.js</a></li>
+        <li><a href="#bundler">Install Bundler</a></li>
+        <li><a href="#gulp">Install Gulp</a></li>
+        <li id="ass"><a href="#dotfiles">Dotfiles on Bash on Ubuntu on Windows 10</a></li>
+      </ol><br>
       <hr>
       <h3>Assumptions</h3>
       <hr>
@@ -29,6 +46,7 @@
             $ gem update &#60;gemname&#62;</div></li>
           </ul>
         </ul><br>
+        <p><a id="auto" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Helpful Automations</h3>
       <hr>
@@ -78,7 +96,8 @@
           </ul>
           <strong><li>Now, when you click the Git CMD taskbar icon it will run as Administrator and enter the bash command for you so you can get straight to your work.</li></strong><br>
         </ol>
-      </ul>
+      </ul><br>
+      <p><a id="bash" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install Bash on Ubuntu on Windows 10</h3>
       <hr>
@@ -123,6 +142,7 @@
       </ol><br>
       <p><strong>You should now be able to type the <span class="mini-code">$ bash</span> command into any command prompt (e.g. cmd.exe, git cmd) to create a bash shell instance in Windows.</strong></p><br>
       <br>
+      <p><a id="update-ubuntu" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Update Ubuntu</h3>
       <hr>
@@ -133,14 +153,14 @@
           <span class="comment">// update and upgrade Ubuntu using apt-get</span><br>
           $ sudo apt-get update -y && sudo apt-get upgrade -y</p></li>
       </ul><br>
+      <p><a href="#contents">Back to Contents</a></p><br>
       <hr>
       <div class="row danger-row">
         <h3 class="important text-center">**KEEP OUT OF ROOM 237**</h3><br>
         <p class="warn"><strong>NEVER ATTEMPT TO MODIFY OR ACCESS ANY PART OF THE LINUX SUSYSTEM using windows or any program (e.g. Windows Explorer, Atom).</strong></p>
         <p class="warn"><strong>Windows programs will corrupt the Linux system's code by inserting its garbage, and BAD THINGS WILL HAPPEN!</strong></p>
-        <p class="warn"><strong>You should ONLY MODIFY LINUX SUBSYSTEM USING A BASH SHELL INSTANCE if you know what you are doing.</strong></p>
-      </div>
-      <hr><br>
+        <p class="warn" id="cleanup"><strong>You should ONLY MODIFY LINUX SUBSYSTEM USING A BASH SHELL INSTANCE if you know what you are doing.</strong></p>
+      </div><br>
       <hr>
       <h3>Cleanup Prior Rubies if Needed</h3>
       <hr>
@@ -164,6 +184,7 @@
             $ rvm implode</p></li>
         </ul>
       </ul><br>
+      <p><a id="rvm" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install RVM</h3><br>
       <hr>
@@ -189,6 +210,7 @@
           $ source ~/.rvm/scripts/rvm</p></li>
         </ul><br>
       </ol>
+      <p><a id="ruby" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install Latest Ruby Version and Update</h3>
       <hr>
@@ -212,6 +234,7 @@
           <li><p class="code">$ sudo apt-get install libgemplugin-ruby</p></li>
         </ul>
       </ul><br>
+      <p><a id="jekyll" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install Jekyll</h3>
       <hr>
@@ -223,8 +246,9 @@
           $ jekyll -v</p></li>
         </ul>
       </ul><br>
+      <p><a id="node" href="#contents">Back to Contents</a></p><br>
       <hr>
-      <h3>Install specific version of Node.js</h3>
+      <h3>Install a Specific Version of Node.js</h3>
       <hr><br>
       <p>Using the Windows Node.js installer will put node.js and npm in the windows system. We want to use node.js and npm while in the bash linux subsystem.</p>
       <ul class="disc-only">
@@ -250,12 +274,14 @@
         <li>Exit su with [Ctrl] + D</li>
       </ul>
       </ul><br>
+      <p><a id="bundler" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install Bundler</h3>
       <hr>
       <ul class="disc-only">
         <li><p class="code">$ gem install bundler</p></li>
       </ul><br>
+      <p><a id="gulp" href="#contents">Back to Contents</a></p><br>
       <hr>
       <h3>Install Gulp</h3>
       <hr>
@@ -263,8 +289,9 @@
         <li><p class="code"><span class="comment">// install gulp globaly</span><br>
         $ npm install --global gulp-cli</p></li>
       </ul><br>
+      <p><a id="dotfiles" href="#contents">Back to Contents</a></p><br>
       <hr>
-      <h3>Dotfiles on bash on Ubuntu on Windows 10</h3>
+      <h3>Dotfiles on Bash on Ubuntu on Windows 10</h3>
       <hr>
       <img src="assets/img/dotfiles.jpg" class="img-centered" alt=""><br>
       <p>Why bother with dotfiles on Windows? Dotfiles are awesome and easy to install, thats why! Above is a screenshot of my dotfiles in action. Customization of text colors is nice, but I love aliases. Instead of typing out comands like "git status" a million times, I just type "gs" for the same command.  These dotfiles are based off of github user paulirish's.</p>
@@ -364,6 +391,7 @@
           <li>Close all bash instances and restart a command prompt and run bash again</li>
         </ul>
       </ol>
+      <p><a href="#contents">Back to Contents</a></p><br>
     </div>
     <div class="col-lg-2 pull-right"></div>
   </div>
