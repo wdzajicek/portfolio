@@ -46,6 +46,7 @@ javascript:
   src:
     - "!assets/js/all.js"
     - "assets/js/menuscroll.js"
+    - "assets/js/smoothscroll.js"
   #  - "assets/js/app.js"
 
 
