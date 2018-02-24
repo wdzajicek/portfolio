@@ -23,6 +23,13 @@ copy:
     - "!assets/css{,/**}"            # css dir
     - "!assets/js{,/**}"             # js dir
     - "!assets/scss{,/**}"           # scss dir
+    - "!assets/adobe/"               # adobe dir - contains working Adobe CC files
+    - "!assets/adobe/*"              # adobe assets not needed in _site build
+    - "!assets/adobe/*.ai"           # illustrator files
+    - "!assets/adobe/*.psd"          # photoshop files
+    - "!assets/adobe/*.jpg"          # jpeg's
+    - "!assets/adobe/*.png"          # png's
+    - "!assets/adobe/*.svg"          # svg's
   dist: "_site/assets/"
   notification: "Running Copy"
 
