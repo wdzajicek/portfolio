@@ -11,13 +11,74 @@
       <hr>
       <ul class="disc-only">
         <li>Command prompts (cmd.exe, git-cmd.exe) should always be run as Administrator.</li>
-        <li>I use Git CMD (git-cmd.exe) for my Windows command line.</li>
-        <li>For this guide, a code block starting with "$" designates a bash shell instance:</li>
-          <ul class="disc-only">
-            <li><div class="code-box"><p class="code">bash </p><span class="comment">// use bash to enter a bash shell instance</span><br>
-        <p class="code">$ gem update &#60;gemname&#62; </p><span class="comment">// &#60;values&#62; are meant to be replaced with a real value</span></div></li>
-          </ul>
+        <li>I use Git CMD (git-cmd.exe) for my Windows command line:</li>
+        <ul>
+          <li>Git command (git-cmd.exe) is downloaded and installed with the standard git-scm installer at: <a href="https://git-scm.com/">https://git-scm.com/</a>.</li>
+          <li>I DO recommend going to <a href="https://git-scm.com/">https://git-scm.com/</a>, downloading, and doing a standard install (leaving all settings default).</li>
+          <li>Git Command IS different than Git Bash</li>
         </ul>
+        <li>Square brackets are used to designate a key on the keyboard such as the escape key: [Esc]</li>
+        <li>Commands starting with "$" designate commands that should be run in a bash shell instance.</li>
+        <li>Each command will be on its own line and preceded by a "$".</li>
+        <li>Comment lines start with // and use white text whereas code is green text.</li>
+        <li>Lines of code should be run one at a time.</li>
+          <ul class="disc-only">
+            <li><div class="code-box"><p class="code"><span class="comment">// type bash and hit [enter] to start a bash shell instance</span> <br>
+            bash <br><br>
+            <span class="comment">// &#60;values&#62; are meant to be replaced with a real value</span><br>
+            $ gem update &#60;gemname&#62;</div></li>
+          </ul>
+        </ul><br>
+      <hr>
+      <h3>Helpful Automations</h3>
+      <hr>
+      <p>There are certain things you can do to make you command prompt experience more enjoyable. These automation steps are optional, but make life easier</p>
+      <ul>
+        <strong><li>Set Git Command to run with Administrator privileges every time:</li></strong><br>
+        <ol>
+          <strong><li>Pin git-cmd.exe to taskbar:</li></strong>
+          <ul>
+            <li>Click the Windows start and search all programs for "Git CMD" within the git programs folder</li>
+            <li>Right click "Git CMD" and choose More > "Pin to taskbar"</li>
+          </ul>
+          <img src="assets/img/taskbar-shortcut.png" alt=""><br><br>
+          <strong><li>Adjust the new taskbar shortcut's properties:</li></strong>
+          <ul>
+            <li>Right click the new Git CMD taskbar icon.</li>
+            <li>Right click "Git CMD" in the menu that popped up and choose "Properties".</li>
+            <li>Choose the "Advanced..." button from the "Shortcut" tab that you should already be on.</li>
+            <li>Check the "Run as Administrator" checkbox in the Advanced Properties dialog box that popped up.</li>
+            <li>Click "OK" to accept the change in the Advanced Properties dialog box</li>
+            <div class="row">
+              <div class="col-lg-4"><img src="assets/img/shortcut-properties.png" alt=""></div>
+              <div class="col-lg-4"><img src="assets/img/properties.png" alt=""></div>
+              <div class="col-lg-4"><img src="assets/img/advanced-properties.png" alt=""></div>
+            </div><br><br>
+          </ul>
+          <strong><li>Click "Apply" then "OK" if you want to skip the next automation step. What will happen from this change is:</li></strong>
+          <ul>
+            <li>Clicking the Git CMD icon in your taskbar will now ask you for Administrative priveleges so that you don't have to specify it every time.</li>
+            <li>Note: this only affects launching Git CMD from that specific taskbar icon</li>
+            <li>Running Git CMD from the Windows Start menu will still require right clicking to specify "Run as Administrator"</li><br>
+          </ul>
+        </ol>
+        <strong><li>Set Git CMD to run the "bash" command for you when it opens:</li></strong><br>
+        <ol>
+          <strong><li>If not in the Git CMD taskbar icon's properties, go there:</li></strong>
+          <ul>
+            <li>Right click the new Git CMD taskbar icon.</li>
+            <li>Right click "Git CMD" in the menu that popped up and choose "Properties".</li><br>
+          </ul>
+          <strong><li>Add "bash" to the end of the "Target:" field.</li></strong>
+          <ul>
+            <li>Your Target should read <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home</span> or something along those lines by default.</li>
+            <li>You want it to read: <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home bash</span></li>
+            <li>Click "Apply" then "OK" to accept the changes.</li>
+            <img src="assets/img/target.png" alt=""><br><br>
+          </ul>
+          <strong><li>Now, when you click the Git CMD taskbar icon it will run as Administrator and enter the bash command for you so you can get straight to your work.</li></strong><br>
+        </ol>
+      </ul>
       <hr>
       <h3>Install Bash on Ubuntu on Windows 10</h3>
       <hr>
@@ -61,6 +122,17 @@
           </ol>
       </ol><br>
       <p><strong>You should now be able to type the <span class="mini-code">$ bash</span> command into any command prompt (e.g. cmd.exe, git cmd) to create a bash shell instance in Windows.</strong></p><br>
+      <br>
+      <hr>
+      <h3>Update Ubuntu</h3>
+      <hr>
+      <ul class="disc-only">
+        <li>To update Ubuntu on Windows 10 run:</li>
+        <li><p class="code"><span class="comment">// start a bash instance</span><br>
+          bash <br><br>
+          <span class="comment">// update and upgrade Ubuntu using apt-get</span><br>
+          $ sudo apt-get update -y && sudo apt-get upgrade -y</p></li>
+      </ul><br>
       <hr>
       <div class="row danger-row">
         <h3 class="important text-center">**KEEP OUT OF ROOM 237**</h3><br>
@@ -69,19 +141,26 @@
         <p class="warn"><strong>You should ONLY MODIFY LINUX SUBSYSTEM USING A BASH SHELL INSTANCE if you know what you are doing.</strong></p>
       </div>
       <hr><br>
+      <hr>
+      <h3>Cleanup Prior Rubies if Needed</h3>
+      <hr>
       <p>Prior to the next steps, I had installed Jekyll via the method on jekyllrb.com Docs Installing on Windows page. This ruby version and the installed ruby gems must be removed FIRST.</p>
       <ul class="disc-only">
         <li>To remove Ruby installed via jekyllrb.com/docs/windows/</li>
         <ul class="disc-only">
-          <li><p class="code">$ bash <br>
-          $ sudo apt-get remove ruby2.3 ruby2.3-dev build-essential dh-autoreconf <br>
-          $ sudo apt autoremove <span class="comment">// and a little bit of cleanup</span></p></li>
+          <li><p class="code"><span class="comment">// remove the ruby version installed via jekyllrb.com</span><br>
+          $ sudo apt-get remove ruby2.3 ruby2.3-dev build-essential dh-autoreconf <br><br>
+
+          <span class="comment">// and a little bit of cleanup</span><br>
+          $ sudo apt autoremove</p></li>
         </ul>
       </ul><br>
       <ul class="disc-only">
         <li>I also had conflicting RVM installed on top of that. You shouldn't need this step unless you've tried to install RVM already. If you need to start fresh run:</li>
         <ul class="disc-only">
-          <li><p class="code">$ rvm cleanup all <br>
+          <li><p class="code"><span class="comment">// cleanup rvm source files</span><br>
+            $ rvm cleanup all <br><br>
+            <span class="comment">// remove rvm installation</span><br>
             $ rvm implode</p></li>
         </ul>
       </ul><br>
@@ -91,7 +170,7 @@
       <ol>
         <li>Request RVM keys from public key server:</li>
         <ul class="disc-only">
-          <li><p class="code code-scroll">$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</p></li>
+          <li><p class="code code-scroll">$&#160;gpg&#160;&#8209;&#8209;keyserver&#160;hkp://keys.gnupg.net&#160;&#8209;&#8209;recv&#8209;keys&#160;409B6B1796C275462A1703113804BB82D39DC0E3&#160;7D2BAF1CF37B13E2069D6956105BD0E739499BDB</p></li>
         </ul><br>
         <li>Install gnupg2:</li>
         <ul class="disc-only">
@@ -99,18 +178,17 @@
         </ul>
         <li>Download and run RVM installation shell script:</li>
         <ul class="disc-only">
-          <li><p class="code">$ \curl -sSL https://get.rvm.io -o rvm.sh <span class="comment">// I left the shell scripts settings as-is</span><br>
-          $ less rvm.sh <span class="comment">// edit isntallation shell script with this</span><br>
-          $ cat rvm.sh | bash -s stable <span class="comment">// run the RVM installation shell script</span><br>
+          <li><p class="code"><span class="comment">// download the installation script <br>
+          // I left the instllation scripts as-is</span><br>
+          $ \curl -sSL https://get.rvm.io -o rvm.sh <br><br>
+          <span class="comment">// edit installation shell script with this</span><br>
+          $ less rvm.sh <br><br>
+          <span class="comment">// run the RVM installation shell script</span><br>
+          $ cat rvm.sh | bash -s stable <br><br>
+          <span class="comment">// set the RVM source path OR exit and restart cmd and start new bash instance</span><br>
           $ source ~/.rvm/scripts/rvm</p></li>
         </ul><br>
       </ol>
-      <hr>
-      <h3>Set RVM Path in .bash_profile</h3>
-      <hr>
-      <ul class="disc-only">
-        <li>ADD CONTENT</li>
-      </ul>
       <hr>
       <h3>Install Latest Ruby Version and Update</h3>
       <hr>
@@ -121,8 +199,9 @@
         </ul><br>
         <li>Check ruby installation:</li>
         <ul class="disc-only">
-          <li><p class="code">$ ruby -v <br>
-          ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] <span class="comment">// my ruby version returns 2.4.1</span></p></li>
+          <li><p class="code">$ ruby -v <br><br>
+          <span class="comment">// my ruby version returns 2.4.1</span><br>
+          ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]</p></li>
         </ul><br>
         <li>Update gems with:</li>
         <ul class="disc-only">
@@ -139,8 +218,9 @@
       <ul class="disc-only">
         <li>Install the jekyll gem with:</li>
         <ul class="disc-only">
-          <li><p class="code">$ gem install jekyll bundler <br>
-          $ jekyll -v <span class="comment">// check the installation</span></p></li>
+          <li><p class="code">$ gem install jekyll bundler <br><br>
+          <span class="comment">// check the installation</span><br>
+          $ jekyll -v</p></li>
         </ul>
       </ul><br>
       <hr>
@@ -150,14 +230,23 @@
       <ul class="disc-only">
         <li>Prepare for installation:</li>
         <ul class="disc-only">
-          <li><p class="code">$ sudo su <br>
-          $ apt-get -y update <br>
+          <li><p class="code"><span class="comment">// enter sudo su mode</span><br>
+          $ sudo su <br><br>
+          <span class="comment">// always good to update before installing</span><br>
+          $ apt-get -y update <br><br>
+          <span class="comment">// install git in the linux subsystem</span><br>
           $ apt-get install git</p></li>
         </ul><br>
-        <li>Use curl to install Node.js. Replace the only number in the command below, with the desired version number. Refer to https://nodejs.org/en/:</li>
+        <li>Use curl to download Node.js. Replace the only number in the command below, with the desired version number. Refer to https://nodejs.org/en/:</li>
         <ul class="disc-only">
-          <li><p class="code">$ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-        apt-get install -y nodejs</p></li>
+          <li><p class="code"><span class="comment">// this will download the "Recommended" (stable) version 8.9.4 LTS</span><br>
+          $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -<br>
+          <span class="comment">// install the downloaded version of nodejs:</span><br>
+          apt-get install -y nodejs<br><br>
+          <span class="comment">// OR - for the 9.6.1 "Current" version use:</span><br>
+          $ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - apt-get install -y nodejs<br>
+          <span class="comment">// nodejs 9.x needs this as well:</span><br>
+          apt-get install -y nodejs</p></li>
         <li>Exit su with [Ctrl] + D</li>
       </ul>
       </ul><br>
@@ -171,7 +260,8 @@
       <h3>Install Gulp</h3>
       <hr>
       <ul class="disc-only">
-        <li><p class="code">$ npm install --global gulp-cli <span class="comment">// install gulp globaly</span></p></li>
+        <li><p class="code"><span class="comment">// install gulp globaly</span><br>
+        $ npm install --global gulp-cli</p></li>
       </ul><br>
       <hr>
       <h3>Dotfiles on bash on Ubuntu on Windows 10</h3>
@@ -183,27 +273,48 @@
         </ul><br>
         <li>Download my dotfiles</li>
         <ul class="disc-only">
-          <li><p class="code">$ git clone https://github.com/wdzajicek/dotfiles.git <br>
-          $ cd dotfiles <span class="comment">// cd to downloaded repo</span></p></li>
+          <li><p class="code"><span class="comment">// clone the git repo</span><br>
+          $ git clone https://github.com/wdzajicek/dotfiles.git <br><br>
+          <span class="comment">// cd to downloaded repo</span><br>
+          $ cd dotfiles</p></li>
         </ul><br>
-        <li>Copy the code linking bash_profile to aliases, functions, etc:</li>
+        <li>Open /dotfiles/.bash_prompt in vim.</li>
         <ul class="disc-only">
-          <li><p class="code">$ vim .bash_profile <br>
+          <li><p class="code"><span class="comment">// view the file using vim:</span><br>
+          $ vim .bash_profile <br><br>
+          <span class="comment">// do NOT enter insert mode to copy text</span>
         </ul><br>
-        <li>Copy the code from dotfiles/.bash_profile</li>
+        <li>Copy the following code in vim by highlighting and right clicking:</li>
         <ul class="disc-only">
-          <li><p class="code">for file in ~/.{path,bash_prompt,aliases,functions}; do <br>
+          <li><p class="code"><span class="comment">// ignore the first lines of code:</span><br>
+          [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile <br><br>
+
+          export PATH="/usr/local/opt/gettext/bin:$PATH" <br><br>
+
+          <span class="comment">// this is the code we want:</span><br>
+          for file in ~/.{path,bash_prompt,aliases,functions}; do <br>
         	[ -r "$file" ] && [ -f "$file" ] && source "$file"; <br>
         done; <br>
-        unset file;</p></li>
+        unset file;<br><br>
+        <span class="comment">// ignore the code after</span></p></li>
+        <li>Every time you call "bash" in a command line the bash shell reads a file in your Home directory named ".bash_profile"</li>
+        <li>This code we copied is telling the bash shell to look in the home directory for .bash_prompt, .aliases, and .functions</li>
       </ul><br>
+        <li>Exit vim</li>
+          <ul class="disc-only">
+            <li>To exit vim type ":q" and press enter</li>
+            <li>If in insert mode first press [Esc] to be able to type ":q"</li>
+            <li>If you need to force quit because you made accidental edits use ":q!"</li>
+          </ul><br>
         <li>Paste code into current .bash_profile</li>
         <ul class="disc-only">
-          <li><p class="code">$ cd .. <br>
+          <li><p class="code"><span class="comment">// back out one dir level (back to Home)</span><br>
+          $ cd .. <br><br>
+          <span class="comment">// open your actual .bash_profile in vim</span><br>
           $ vim .bash_profile</p></li>
-          <li>Enter instert mode with "I"</li>
+          <li>Enter instert mode with [I] key on keyboard</li>
           <li>Paste code before path to RVM</li>
-          <li>Example .bash_profile:</li>
+          <li>This is an EXAMPLE of what your .bash_profile may look like:</li>
           <ul class="disc-only">
             <li><p class="code">[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile <br>
             <br>
@@ -216,15 +327,26 @@
             <br>
             [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*</p></li>
           </ul>
-        </ul>
-        <li>Copy .aliases, .functions, and .bash_promt to Home</li>
+        </ul><br>
+        <li>Save edited .bash_profile and exit vim:</li>
         <ul class="disc-only">
-          <li><p class="code">$ cd ~ <br>
-          cd dotfiles <br>
+          <li>Press [Esc] to exit insert mode</li>
+          <li>Type ":w" and press enter to write (save) the file</li>
+          <li>Type ":q" and press enter to exit vim</li>
+          <li>OR just combine both with ":wq"</li><br>
+        </ul>
+        <li>Copy .aliases, .functions, and .bash_promt to your Home dir. We told the bash shell to look for these dotfiles in the Home dir but they aren't there yet.</li>
+        <ul class="disc-only">
+          <li><p class="code"><span class="comment">// you may already be home:</span><br>
+          $ cd ~ <br><br>
+          <span class="comment">// go back into downloaded dotfiles repo</span><br>
+          $ cd dotfiles <br><br>
+          <span class="comment">// use the cp command to copy the files and place them up one dir level (in your Home dir)</span><br>
           $ cp .aliases ../.aliases <br>
           $ cp .functions ../.functions <br>
-          $ cp .bash_prompt ../bash_prompt <br>
+          $ cp .bash_prompt ../.bash_prompt <br>
           </p></li>
+          <li>Close all bash instances and restart a command prompt and run bash again</li>
         </ul>
       </ol>
     </div>
