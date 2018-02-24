@@ -29,7 +29,7 @@
       <ul class="disc-only">
         <li>Command prompts (cmd.exe, git-cmd.exe) should always be run as Administrator.</li>
         <li>I use Git CMD (git-cmd.exe) for my Windows command line:</li>
-        <ul>
+        <ul class="disc-only">
           <li>Git command (git-cmd.exe) is downloaded and installed with the standard git-scm installer at: <a href="https://git-scm.com/">https://git-scm.com/</a>.</li>
           <li>I DO recommend going to <a href="https://git-scm.com/">https://git-scm.com/</a>, downloading, and doing a standard install (leaving all settings default).</li>
           <li>Git Command IS different than Git Bash</li>
@@ -51,17 +51,17 @@
       <h3>Helpful Automations</h3>
       <hr>
       <p>There are certain things you can do to make you command prompt experience more enjoyable. These automation steps are optional, but make life easier</p>
-      <ul>
+      <ul class="disc-only">
         <strong><li>Set Git Command to run with Administrator privileges every time:</li></strong><br>
         <ol>
           <strong><li>Pin git-cmd.exe to taskbar:</li></strong>
-          <ul>
+          <ul class="disc-only">
             <li>Click the Windows start and search all programs for "Git CMD" within the git programs folder</li>
             <li>Right click "Git CMD" and choose More > "Pin to taskbar"</li>
           </ul>
           <img src="assets/img/taskbar-shortcut.png" alt=""><br><br>
           <strong><li>Adjust the new taskbar shortcut's properties:</li></strong>
-          <ul>
+          <ul class="disc-only">
             <li>Right click the new Git CMD taskbar icon.</li>
             <li>Right click "Git CMD" in the menu that popped up and choose "Properties".</li>
             <li>Choose the "Advanced..." button from the "Shortcut" tab that you should already be on.</li>
@@ -74,7 +74,7 @@
             </div><br><br>
           </ul>
           <strong><li>Click "Apply" then "OK" if you want to skip the next automation step. What will happen from this change is:</li></strong>
-          <ul>
+          <ul class="disc-only">
             <li>Clicking the Git CMD icon in your taskbar will now ask you for Administrative priveleges so that you don't have to specify it every time.</li>
             <li>Note: this only affects launching Git CMD from that specific taskbar icon</li>
             <li>Running Git CMD from the Windows Start menu will still require right clicking to specify "Run as Administrator"</li><br>
@@ -83,12 +83,12 @@
         <strong><li>Set Git CMD to run the "bash" command for you when it opens:</li></strong><br>
         <ol>
           <strong><li>If not in the Git CMD taskbar icon's properties, go there:</li></strong>
-          <ul>
+          <ul class="disc-only">
             <li>Right click the new Git CMD taskbar icon.</li>
             <li>Right click "Git CMD" in the menu that popped up and choose "Properties".</li><br>
           </ul>
           <strong><li>Add "bash" to the end of the "Target:" field.</li></strong>
-          <ul>
+          <ul class="disc-only">
             <li>Your Target should read <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home</span> or something along those lines by default.</li>
             <li>You want it to read: <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home bash</span></li>
             <li>Click "Apply" then "OK" to accept the changes.</li>
@@ -286,8 +286,11 @@
       <h3>Install Gulp</h3>
       <hr>
       <ul class="disc-only">
-        <li><p class="code"><span class="comment">// install gulp globaly</span><br>
-        $ npm install --global gulp-cli</p></li>
+        <li>Install Gulp.js globaly using the following command:</li>
+        <ul class="disc-only">
+          <li><p class="code"><span class="comment">// npm installs only ever work with sudo for me:</span><br>
+          $ sudo npm install --global gulp-cli</p></li>
+        </ul>
       </ul><br>
       <p><a id="dotfiles" href="#contents">Back to Contents</a></p><br>
       <hr>
@@ -296,7 +299,7 @@
       <img src="assets/img/dotfiles.jpg" class="img-centered" alt=""><br>
       <p>Why bother with dotfiles on Windows? Dotfiles are awesome and easy to install, thats why! Above is a screenshot of my dotfiles in action. Customization of text colors is nice, but I love aliases. Instead of typing out comands like "git status" a million times, I just type "gs" for the same command.  These dotfiles are based off of github user paulirish's.</p>
       <p>Some of my commonly used aliases include:</p>
-      <ul>
+      <ul class="disc-only">
         <li>g = git</li>
         <li>gs = git status</li>
         <li>ga = git add</li>
