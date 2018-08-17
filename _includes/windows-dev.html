@@ -60,7 +60,7 @@
             <li>Click the Windows start and search all programs for "Git CMD" within the git programs folder</li>
             <li>Right click "Git CMD" and choose More > "Pin to taskbar"</li>
           </ul>
-          <img src="assets/img/taskbar-shortcut.png" alt=""><br><br>
+          <img src="{{ page.baseurl }}assets/img/taskbar-shortcut.png" alt=""><br><br>
           <strong><li>Adjust the new taskbar shortcut's properties:</li></strong>
           <ul class="disc-only">
             <li>Right click the new Git CMD taskbar icon.</li>
@@ -69,9 +69,9 @@
             <li>Check the "Run as Administrator" checkbox in the Advanced Properties dialog box that popped up.</li>
             <li>Click "OK" to accept the change in the Advanced Properties dialog box</li>
             <div class="row">
-              <div class="col-lg-4"><img src="assets/img/shortcut-properties.png" alt=""></div>
-              <div class="col-lg-4"><img src="assets/img/properties.png" alt=""></div>
-              <div class="col-lg-4"><img src="assets/img/advanced-properties.png" alt=""></div>
+              <div class="col-lg-4"><img src="{{ page.baseurl }}assets/img/shortcut-properties.png" alt=""></div>
+              <div class="col-lg-4"><img src="{{ page.baseurl }}assets/img/properties.png" alt=""></div>
+              <div class="col-lg-4"><img src="{{ page.baseurl }}assets/img/advanced-properties.png" alt=""></div>
             </div><br><br>
           </ul>
           <strong><li>Click "Apply" then "OK" if you want to skip the next automation step. What will happen from this change is:</li></strong>
@@ -93,7 +93,7 @@
             <li>Your Target should read <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home</span> or something along those lines by default.</li>
             <li>You want it to read: <span class="field-text">"C:\Program Files\Git\git-cmd.exe" --cd-to-home bash</span></li>
             <li>Click "Apply" then "OK" to accept the changes.</li>
-            <img src="assets/img/target.png" alt=""><br><br>
+            <img src="{{ page.baseurl }}assets/img/target.png" alt=""><br><br>
           </ul>
           <strong><li>Now, when you click the Git CMD taskbar icon it will run as Administrator and enter the bash command for you so you can get straight to your work.</li></strong><br>
         </ol>
@@ -143,9 +143,9 @@
             <li>Turn Windows Developer Mode on:</li>
             <ol><br>
               <div class="row">
-                <div class="col-lg-4 pull-left"><img src="assets/img/start.jpg" alt="" class="img-fluid"></div>
-                <div class="col-lg-4"><img src="assets/img/settings.png" alt="" class="img-fluid"></div>
-                <div class="col-lg-4 pull-right"><img src="assets/img/developer.png" alt="" class="img-fluid"></div>
+                <div class="col-lg-4 pull-left"><img src="{{ page.baseurl }}assets/img/start.jpg" alt="" class="img-fluid"></div>
+                <div class="col-lg-4"><img src="{{ page.baseurl }}assets/img/settings.png" alt="" class="img-fluid"></div>
+                <div class="col-lg-4 pull-right"><img src="{{ page.baseurl }}assets/img/developer.png" alt="" class="img-fluid"></div>
               </div><br>
               <li>Go to <strong>Settings &#62; Update & Security &#62; For developers</strong> and select the <strong><em>"Developer mode"</em></strong> radio circle.</li>
               <li>Apply the default "File Explorer" and "PowerShell" settings.</li>
@@ -308,7 +308,7 @@
       <hr>
       <h3>Dotfiles on Bash on Ubuntu on Windows 10</h3>
       <hr>
-      <img src="assets/img/dotfiles.jpg" class="img-centered" alt=""><br>
+      <img src="{{ page.baseurl }}assets/img/dotfiles.jpg" class="img-centered" alt=""><br>
       <p>Why bother with dotfiles on Windows? Dotfiles are awesome and easy to install, thats why! Above is a screenshot of my dotfiles in action. Customization of text colors is nice, but I love aliases. Instead of typing out comands like "git status" a million times, I just type "gs" for the same command.  These dotfiles are based off of github user paulirish's.</p>
       <p>Some of my commonly used aliases include:</p>
       <ul class="disc-only">
