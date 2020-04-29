@@ -27,7 +27,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-uglify": "^2.1.2",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.6.1",
     "popper.js": "^1.12.9",
     "run-sequence": "^1.2.1",
